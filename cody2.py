@@ -102,33 +102,33 @@ print('>>> 스택 인스턴스 생성 완료')
 
 # 2. empty() 함수로 초기 상태 확인
 print('\n--- [TEST 1] 초기 상태 확인 ---')
-print(f'스택이 비어 있나요? {my_stack.empty()}') # True 출력 예상
+print(f'스택이 비어 있나요? {my_stack.empty()}')
 
 # 3. pop() 함수로 비어 있을 때 경고 메시지 확인
-my_stack.pop() # 경고 메시지 출력 예상
+my_stack.pop()
 print('-------------------------------')
 
 # 4. peek() 함수로 비어 있을 때 경고 메시지 확인
-my_stack.peek() # 경고 메시지 출력 예상
+my_stack.peek() 
 print('-------------------------------')
 
 # 5. push() 함수로 내용 입력 (고유 번호 포함)
 print('\n--- [TEST 2] PUSH 동작 확인 (5개 추가) ---')
 for i in range(1, 6):
-    item_data = f'항목_{i:02d}'  # 고유 번호 '01', '02' 등으로 구성
+    item_data = f'항목_{i:02d}'
     my_stack.push(item_data)
     
-# 6. peek() 함수로 가장 마지막 항목 확인 (삭제 안됨)
+# 6. peek() 함수로 가장 마지막 항목 확인
 print('\n--- [TEST 3] PEEK 동작 확인 ---')
-print(f'현재 TOP 항목: {my_stack.peek()}') # 항목_05 출력 예상
-print(f'현재 항목 수: {my_stack.get_size()}') # 5 출력 예상
+print(f'현재 TOP 항목: {my_stack.peek()}')
+print(f'현재 항목 수: {my_stack.get_size()}')
 print('-------------------------------')
 
 # 7. pop() 함수로 내용 가져오기 (LIFO 확인)
 print('\n--- [TEST 4] POP 동작 확인 (3개 가져오기) ---')
-item_1 = my_stack.pop() # 항목_05 반환 및 제거 예상
-item_2 = my_stack.pop() # 항목_04 반환 및 제거 예상
-item_3 = my_stack.pop() # 항목_03 반환 및 제거 예상
+item_1 = my_stack.pop() 
+item_2 = my_stack.pop() 
+item_3 = my_stack.pop() 
 
 print(f'\n가져온 항목 순서: {item_1}, {item_2}, {item_3}')
 print(f'스택이 비어 있나요? {my_stack.empty()}') # False 출력 예상
@@ -136,8 +136,6 @@ print(f'현재 항목 수: {my_stack.get_size()}') # 2 출력 예상
 print('-------------------------------')
 
 # 8. 스택 최대 크기(10개) 초과 시 경고 메시지 확인을 위한 PUSH
-print('\n--- [TEST 5] 스택 최대 크기 초과 확인 (8개 추가 -> 총 10개 -> 11개째 시도) ---')
-# 현재 2개 남아있음 (항목_01, 항목_02)
 for i in range(6, 14): # i=6부터 13까지 총 8번 PUSH 시도
     item_data = f'항목_{i:02d}' 
     my_stack.push(item_data)
@@ -146,17 +144,12 @@ for i in range(6, 14): # i=6부터 13까지 총 8번 PUSH 시도
 print('-------------------------------')
 
 # 9. empty() 함수로 가득 찬 상태 확인
-print('\n--- [TEST 6] 최종 상태 확인 ---')
 print(f'스택이 비어 있나요? {my_stack.empty()}') # False 출력 예상
 print(f'최종 항목 수: {my_stack.get_size()}') # 10 출력 예상
-print('-------------------------------')
 
 # 10. 스택 내용 모두 POP
-print('\n--- [TEST 7] 스택 전체 POP ---')
 while not my_stack.empty():
     my_stack.pop()
     
 # 11. 스택이 완전히 비었는지 확인
-print('\n--- [TEST 8] 스택 완전 비움 확인 ---')
 print(f'스택이 비어 있나요? {my_stack.empty()}') # True 출력 예상
-print('-------------------------------')
